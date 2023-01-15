@@ -3,7 +3,7 @@
   "id": "madmin",
   "version": "${version}",
   "name": "MAdmin",
-  "description": "A mod that provides a host of moderation tools.",
+  "description": "A mod that provides a host of moderation tools and server management tools.",
   "authors": [
     "Millzy"
   ],
