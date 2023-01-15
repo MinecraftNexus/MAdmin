@@ -3,10 +3,7 @@ package dev.millzy.madmin.data;
 import net.fabricmc.loader.api.FabricLoader;
 
 import java.io.*;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.ParameterizedType;
 import java.nio.file.Path;
-import java.util.function.Supplier;
 
 public abstract class DataHandler<T extends Data> {
     private static final String dataPath = "/MAdmin/";
