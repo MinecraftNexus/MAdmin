@@ -3,9 +3,12 @@ package dev.millzy.madmin.data;
 import net.fabricmc.loader.api.FabricLoader;
 
 import java.io.*;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.ParameterizedType;
 import java.nio.file.Path;
+import java.util.function.Supplier;
 
-public abstract class DataHandler<T> {
+public abstract class DataHandler<T extends Data> {
     private static final String dataPath = "/MAdmin/";
     private static final String extension = "dat";
 
@@ -13,7 +16,7 @@ public abstract class DataHandler<T> {
 
     protected T data;
 
-    private DataHandler() {
+    public DataHandler() {
         gameDir = FabricLoader.getInstance().getGameDir().toString();
 
         String filename = getFilename();
@@ -26,9 +29,13 @@ public abstract class DataHandler<T> {
 
                 in.close();
                 file.close();
+
             } catch (IOException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
+        }
+        else {
+            instantiate();
         }
     }
 
@@ -59,4 +66,5 @@ public abstract class DataHandler<T> {
     }
 
     public abstract String getName();
+    public abstract T instantiate();
 }
