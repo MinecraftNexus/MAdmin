@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "madmin",
+  "version": "${version}",
+  "name": "MAdmin",
+  "description": "A mod that provides a host of moderation tools.",
+  "authors": [
+    "Millzy"
+  ],
+  "contact": {
+    "repo": "https://github.com/MinecraftNexus/MAdmin.git"
+  },
+  "license": "MIT",
+  "icon": "assets/madmin/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "server": [
+      "dev.millzy.madmin.server.MAdminServer"
+    ]
+  },
+  "mixins": [
+    "madmin.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.12",
+    "fabric": "*",
+    "minecraft": "1.19.3"
+  }
+}
